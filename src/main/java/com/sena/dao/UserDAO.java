@@ -58,6 +58,17 @@ public class UserDAO {
         } catch (Exception e) {
             e.printStackTrace(System.out);
             em.getTransaction().rollback();
-        } 
+        }  
     }
+    
+      public void eliminar(User user){
+      try {
+            em.getTransaction().begin();
+            em.remove(em.merge(user));
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            em.getTransaction().rollback();
+        }  
+      }
 }

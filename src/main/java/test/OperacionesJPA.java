@@ -24,6 +24,7 @@ public class OperacionesJPA {
         
         userDAO.insertar(user);
         */
+        /*
         User user = new User();
         user.setIdUser(3);
         user = userDAO.consultarUserID(user);
@@ -34,7 +35,15 @@ public class OperacionesJPA {
         user.setEmailUser("marialabandid@mail.com");
         
         userDAO.modificar(user);
+*/
+        
+        User user = new User();
+        user.setIdUser(3);
+        user = userDAO.consultarUserID(user);
+        System.out.println("Persona a eliminar: " +user);
+        userDAO.eliminar(user);
         userDAO.listar();
+
     }
     
 }

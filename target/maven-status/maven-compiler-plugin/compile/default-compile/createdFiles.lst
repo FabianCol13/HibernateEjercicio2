@@ -1,0 +1,4 @@
+com\sena\dao\UserDAO.class
+com\sena\domain\User.class
+test\TestHibernate.class
+test\OperacionesJPA.class

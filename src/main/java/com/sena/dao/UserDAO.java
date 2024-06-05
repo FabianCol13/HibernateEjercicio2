@@ -46,6 +46,10 @@ public class UserDAO {
         }
     }
     
+    public User consultarUserID (User user){
+    return em.find(User.class, user.getIdUser());
+    }
+    
     public void modificar(User user){
        try {
             em.getTransaction().begin();
@@ -54,10 +58,6 @@ public class UserDAO {
         } catch (Exception e) {
             e.printStackTrace(System.out);
             em.getTransaction().rollback();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+        } 
     }
 }

@@ -15,7 +15,7 @@ public class OperacionesJPA {
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
         userDAO.listar();
-        
+        /*
         User user = new User();
         user.setNameUser("Maria");
         user.setLastnameUser("Gonzales");
@@ -23,9 +23,18 @@ public class OperacionesJPA {
         user.setEmailUser("marialabandida@mail.com");
         
         userDAO.insertar(user);
+        */
+        User user = new User();
+        user.setIdUser(3);
+        user = userDAO.consultarUserID(user);
+        System.out.println("Persona encontrada: " +user);
+        user.setNameUser("Maria");
+        //user.setLastnameUser("Gonzales");
+        //user.setPhoneUser("3224559876");
+        user.setEmailUser("marialabandid@mail.com");
         
-        
-        
+        userDAO.modificar(user);
+        userDAO.listar();
     }
     
 }
